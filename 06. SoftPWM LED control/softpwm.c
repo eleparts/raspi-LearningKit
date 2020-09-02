@@ -1,3 +1,15 @@
+/* 05. softpwm.c
+*
+* Software PWM 기능을 이용해 LED의 밝기를 조절해 줍니다.
+*
+* 필요 소자
+* LED : 1ea, 저항 220옴 1ea(색띠 : 빨빨검검갈)
+* 
+* LED : Wpi : 6 | BCM : #25
+* 
+* ※ Wpi번호는 wiringPi 라이브러리가 사용하는 핀 번호이며, BCM 번호는 GPIO Cobbler Plus V2 보드에 적혀있는 번호입니다.
+*/
+
 #include <wiringPi.h>
 #include <softPwm.h>      // wiringPi - Software PWM Library
 #include <stdio.h>
@@ -7,10 +19,11 @@
 
 int main(void)
 {    
-   int bright;
-   wiringPiSetup();
-   softPwmCreate(6, 0, 100);
+  int bright;
 
+  wiringPiSetup();
+
+  softPwmCreate(6, 0, 100);
 
   while(1)
   {
