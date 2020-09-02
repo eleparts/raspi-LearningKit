@@ -1,4 +1,4 @@
-/* 05. softpwm.c
+/* 06. softpwm.c
 *
 * Software PWM 기능을 이용해 LED의 밝기를 조절해 줍니다.
 *
