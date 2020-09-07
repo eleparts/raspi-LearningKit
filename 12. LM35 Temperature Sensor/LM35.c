@@ -44,8 +44,8 @@ int main(void)
 
     /*
     *  ADC data :
-    *  19.61 : ADC 256bit (0~5V)
-    *  12.94 : ADC 256bit (0~3.3V)
+    *  19.61 : ADC 8bit(256 / 0~5V)
+    *  12.94 : ADC 8bit(256 / 0~3.3V)
     */
     dat = (value * 12.94);
     temp = dat / 10;
