@@ -26,17 +26,17 @@ CDS + ADC(I2C) 모듈 + 부저
 8. 倾斜开关  
 볼 스위치 on/off + ADC?  
 
-9. RGB全彩灯 -> RGB LED  
-RGB LED 모듈(LED*3) 테스트 예제 작성  
+9. RGB全彩灯  
+RGB LED 모듈(LED*3)  
 
 10. DHT11  
-DHT11 온습도센서 모듈 테스트 예제 추가  
+DHT11 온습도센서 모듈  
 
 11. DS3231精密时钟  
 DS3231 RTC 모듈  
 
-12. LM35 Temperature Sensor
-LM35 온도 센서(소자/ ADC) 예제 추가, 문제점 안내사항 추가 등  
+12. LM35温度传感器  
+LM35 온도 센서(소자/ ADC)  
 
 13. 一位数码管  
 1 Digit 7-세그먼트 제어  
@@ -108,8 +108,8 @@ DHT11 온습도센서 모듈 테스트 예제 추가
 11. DS3231精密时钟  
 DS3231 RTC 모듈  
 
-12. LM35温度传感器  
-LM35 온도 센서(소자/ ADC)  
+12. LM35温度传感器 -> LM35 Temperature Sensor  
+LM35 온도 센서(소자/ ADC) 예제 추가, 문제점 안내사항 추가 등
 
 13. 一位数码管  
 1 Digit 7-세그먼트 제어  
