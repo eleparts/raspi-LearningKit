@@ -6,7 +6,7 @@
 * 필요 소자
 * PCF8591 모듈, 부저, CDS(LDR), 저항 1k옴 (갈검검갈갈) / 선택: 부저 대신 LED+저항 연결(소리 -> LED 점멸속도 변화).
 * 
-* > PCF8591 모듈
+* > PCF8591 모듈 (0,1,3 채널 사용 시 사용 전 점퍼를 제거해 주어야 합니다. / 예제에서는 0번 채널 사용)
 * 모듈의 전원은 각각 3.3V, GND 연결, SDA, SCL 핀은 라즈베리파이의 동일한 SDA(#2), SCL(#3) 에 연결합니다.
 * > CDS(LDR) 
 * [3.3V] - [1k 저항] - [CDS] - [GND] 순서로 연결한 뒤 저항과 CDS 부분에 점퍼를 연결, PCF8591 모듈의 AIN0으로 연결해 줍니다.
@@ -22,6 +22,7 @@
 
 #define	BUZZER       15
 #define Q2W_ABASE   120
+#define ADC_CH        0
 
 
 void voice_freq(int del)
@@ -44,7 +45,7 @@ int main(void)
 
   while(1)
   {
-    value = analogRead(Q2W_ABASE + 0);
+    value = analogRead(Q2W_ABASE + ADC_CH);
     //printf("> %d \r\n",value);        // 출력 값 확인용
 
     if (value<100)
