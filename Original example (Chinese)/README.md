@@ -26,8 +26,8 @@ CDS + ADC(I2C) 모듈 + 부저
 8. 倾斜开关  
 볼 스위치 on/off + ADC?  
 
-9. RGB全彩灯  
-RGB LED 모듈(LED*3)  
+9. RGB全彩灯 -> RGB LED  
+RGB LED 모듈(LED*3) 테스트 예제 작성  
 
 10. DHT11  
 DHT11 온습도센서 모듈  
