@@ -99,8 +99,8 @@ CDS사용을 위해 ADC모듈 사용, ADC 모듈 사용법은 16번 예제에서
 8. 倾斜开关 -> Switch input  
 볼스위치는 아날로그 신호 X, 디지털 신호+ 스위치 예제로 변경
 
-9. RGB全彩灯  
-RGB LED 모듈(LED*3)  
+9. RGB全彩灯 -> RGB LED  
+RGB LED 모듈(LED*3) 테스트 예제 작성  
 
 10. DHT11  
 DHT11 온습도센서 모듈  
