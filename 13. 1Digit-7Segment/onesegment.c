@@ -6,16 +6,16 @@
 * 1Digit 7-Segment, 저항 8ea (220옴 / 색띠 : 빨빨검검갈)
 *
 * 7-Segment / 각 핀에 220옴 저항을 연결해 줍니다.
-* ( 1)SEG_E : Wpi: 15 | BCM : #14
-* ( 2)SEG_D : Wpi: 16 | BCM : #15
+* ( 1)SEG_E : Wpi: 25 | BCM : #26
+* ( 2)SEG_D : Wpi: 24 | BCM : #19
 * ( 3)SEG_GND : GND
-* ( 4)SEG_C : Wpi: 10 | BCM : #8
-* ( 5)SEG_DP: Wpi: 11 | BCM : #7
-* ( 6)SEG_B : Wpi: 6  | BCM : #25
-* ( 7)SEG_A : Wpi: 5  | BCM : #24
+* ( 4)SEG_C : Wpi: 23 | BCM : #13
+* ( 5)SEG_DP: Wpi: 22 | BCM : #6
+* ( 6)SEG_B : Wpi: 26 | BCM : #12
+* ( 7)SEG_A : Wpi: 27 | BCM : #16
 * ( 8)SEG_GND : GND
-* ( 9)SEG_F : Wpi: 4  | BCM : #23
-* (10)SEG_G : Wpi: 1  | BCM : #18
+* ( 9)SEG_F : Wpi: 28 | BCM : #20
+* (10)SEG_G : Wpi: 29 | BCM : #21
 * (괄호) 안의 숫자는 세그먼트 핀 번호(Segment pin number)
 *
 * G F GND A B
@@ -33,13 +33,13 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define a 5
-#define b 6
-#define c 10
-#define d 16
-#define e 15
-#define f 4
-#define g 1
+#define a 27
+#define b 26
+#define c 23
+#define d 24
+#define e 25
+#define f 28
+#define g 29
 // DP not use
 
 void display0()
