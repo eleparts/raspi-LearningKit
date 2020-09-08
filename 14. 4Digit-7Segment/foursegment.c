@@ -25,7 +25,8 @@
 * D1  A  F D2 D3  B
 * 12 11 10  9  8  7  : Segment pin number
 * ┌────────────────┐
-* │    segment     │
+* │   │segment│    │
+* │ D1│ D2│ D3│ D4 │
 * └────────────────┘
 *  1  2  3  4  5  6  : Segment pin number
 *  E  D DP  C  G D4
