@@ -5,7 +5,7 @@
 * 필요 소자
 * 4Digit 7-Segment, 저항 8ea (220옴 / 색띠 : 빨빨검검갈) // 연결 시 저항 다리가 쇼트되지 않도록 주의해 줍니다.
 *
-* 7-Segment / 각 핀에 220옴 저항을 연결해 줍니다.
+* 7-Segment / 각 핀(A~G,DP)에 220옴 저항을 연결해 줍니다. (D1~D4는 GND의 역활로 저항을 연결하지 않음)
 * ( 1)SEG_E  : Wpi: 25 | BCM : #26
 * ( 2)SEG_D  : Wpi: 24 | BCM : #19
 * ( 3)SEG_DP : Wpi: 23 | BCM : #13
@@ -25,7 +25,7 @@
 * D1  A  F D2 D3  B
 * 12 11 10  9  8  7  : Segment pin number
 * ┌────────────────┐
-* │   │segment│    │
+* │ │4ch segment│  │
 * │ D1│ D2│ D3│ D4 │
 * └────────────────┘
 *  1  2  3  4  5  6  : Segment pin number
