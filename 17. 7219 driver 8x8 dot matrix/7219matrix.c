@@ -12,7 +12,7 @@
 * CLK : Wpi : 14 | BCM : #11
 *
 * ※ Wpi번호는 wiringPi 라이브러리가 사용하는 핀 번호이며, BCM 번호는 GPIO Cobbler Plus V2 보드에 적혀있는 번호입니다.
-* ※ 예제 실행을 위해서는 라즈베리파이 설정에서 SPI 를 Enable 해 주어야 합니다.
+* ※ 예제 실행을 위해서는 라즈베리파이 설정에서 SPI를 Enable 해 주어야 합니다.
 */
 #include <stdio.h>
 #include <wiringPi.h>
@@ -27,7 +27,7 @@
 
 /*
 * bit patterns for the CP437 font
-* see https://en.wikipedia.org/wiki/Code_page_437 for details 
+* see https://en.wikipedia.org/wiki/Code_page_437 for details / 숫자 및 알파벳 일부 사용
 */
 unsigned char characterData[63][8] = {
   { 0x3E, 0x7F, 0x71, 0x59, 0x4D, 0x7F, 0x3E, 0x00 }, // '0'
