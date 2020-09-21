@@ -135,17 +135,17 @@ IR용 예제 제작, lirc 설치방법 안내
 20. 舵机python控制 -> 파이썬 예제 삭제  
 서보 모터 제어 (Python)  
 
-21. PS2 遥感模块实验 -> 20. Joystick_Control  
+21. PS2 遥感模块实验 -> 20.Joystick_Control  
 조이스틱 모듈 + ADC 모듈 신호 입력 예제 추가  
 
-22. HC-SR04超声波实验  
-HC-SR04 초음파 거리 측정 센서  
+22. HC-SR04超声波实验 -> 21.HC-SR04_Ultrasonic_sensor  
+HC-SR04 초음파 거리 측정  
 
-23. relay继电器实验  
+23. relay继电器实验 -> 22.Relay_Control
 릴레이 보드 제어  
 
-24. ULN2003驱动步进电机实验  
-ULN2003 스텝모터 제어  
+24. ULN2003驱动步进电机实验 -> 23.ULN2003_Step_Moter_Control  
+ULN2003 IC로 스텝모터 제어  
 
 25. ULN2003驱动步进电机实验_python  
-ULN2003 스텝모터 제어 (파이썬)  
+ULN2003 스텝모터 제어 (파이썬) -> 파이썬 디렉토리 삭제  
