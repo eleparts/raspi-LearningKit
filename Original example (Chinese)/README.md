@@ -93,35 +93,35 @@ ULN2003 스텝모터 제어 (파이썬)
 
 6. softpwm灯控制 -> SoftPWM LED control  
 
-7. 光控声音 -> Light detection ADC control  
-CDS사용을 위해 ADC모듈 사용, ADC 모듈 사용법은 16번 예제에서 진행됨
+7. 光控声音 -> 9.Light detection ADC control  
+CDS사용을 위해 ADC모듈 사용, ADC 모듈 사용법 예제를 본 예제 위로 이동.
 
-8. 倾斜开关 -> Switch input  
-볼스위치는 아날로그 신호 X, 디지털 신호+ 스위치 예제로 변경
+8. 倾斜开关 -> 7.Switch input  
+볼스위치는 아날로그 신호 X, 디지털 신호 + 스위치 예제로 변경, 입력 예제이므로 ADC 예제 앞으로 이동  
 
-9. RGB全彩灯 -> RGB LED  
+9. RGB全彩灯 -> 11.RGB LED  
 RGB LED 모듈(LED*3) 테스트 예제 작성  
 
-10. DHT11  
+10. DHT11  -> 12.DHT11
 DHT11 온습도센서 모듈 테스트 예제 추가  
 
-11. DS3231精密时钟  
+11. DS3231精密时钟 -> 임의 보류/디렉토리 삭제  
 DS3231 RTC 모듈  
 
-12. LM35温度传感器 -> LM35 Temperature Sensor  
+12. LM35温度传感器 -> 13.LM35 Temperature Sensor  
 LM35 온도 센서(소자/ ADC) 예제 추가, 문제점 안내사항 추가 등  
 
-13. 一位数码管 -> 1Digit-7Segment  
+13. 一位数码管 -> 14.1Digit-7Segment  
 기본 예제 안내 추가 및 간략화 한 추가 예제 작성, 핀 배치순서 수정  
 
-14. 四位数码管 -> 4Digit-7Segment  
+14. 四位数码管 -> 15.4Digit-7Segment  
 기본 예제 안내 추가 및 간략화 한 추가 예제 작성, 핀 배치순서 수정  
 
-15. 74hc595IO输出扩展  串行输入并行输出 -> 74hc595 Shift Register  
+15. 74hc595IO输出扩展  串行输入并行输出 -> 16.74hc595 Shift Register  
 예제 수정, 안내 추가, 클럭제어 지연 추가 등  
 
-16. pcf8591模拟信号读取 -> PCF8591 AD-DA module  
-PCF8591 ADC 모듈 예제 일부 수정 및 내장 소자 테스트 기능 추가  
+16. pcf8591模拟信号读取 -> 8.PCF8591 AD-DA module  
+PCF8591 ADC 모듈 예제 일부 수정 및 내장 소자 테스트 기능 추가, ADC 첫 사용 예제이므로 앞으로 이동  
 
 17. 7219驱动8x8点阵python版本 -> 7219 driver 8x8 dot matrix  
 구버전 예제 삭제, C언어 예제 추가, 신 버전(Python3) 에제 설치방법 안내 추가.  
@@ -149,3 +149,6 @@ ULN2003 IC 모듈로 스텝모터 제어 예제 추가
 
 25. ULN2003驱动步进电机实验_python  
 ULN2003 스텝모터 제어 (파이썬) -> 파이썬 디렉토리 삭제  
+
+26. 생성 -> 10.801S_Vibration_Sensor
+801S 진동센서 모듈 예제 추가, ADC 예제 위치로 이동  

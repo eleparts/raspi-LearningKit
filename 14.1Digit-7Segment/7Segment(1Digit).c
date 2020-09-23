@@ -1,4 +1,4 @@
-/* 13. 7Segment(1Digit)
+/* 14. 7Segment(1Digit)
 *
 * 7-Segment를 이용하여 숫자를 표시해 줍니다. (1 Digit : 1칸짜리 세그먼트)
 *

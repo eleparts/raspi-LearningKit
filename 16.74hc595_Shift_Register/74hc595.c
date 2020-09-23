@@ -1,7 +1,7 @@
-/* 15. 74hc595_2
+/* 16. 74hc595
 *
 * 74HC595 Shift Register IC를 이용하여 GPIO를 확장/ 제어해 줍니다.
-* 이 IC를 이용하면 적은 GPIO 선으로 다수의 GPIO가 필요한 제품 LED, 7-segment 등을 제어할 수 있습니다
+* 이 IC를 이용하면 적은 GPIO 선으로 다수의 GPIO가 필요한 제품 LED, 7-segment 등을 제어할 수 있습니다.
 * 본 예제에서는 IC의 출력 핀에 LED를 연결해 제어해 줍니다.
 *
 * 필요 소자
@@ -33,89 +33,64 @@
 * ※ Wpi번호는 wiringPi 라이브러리가 사용하는 핀 번호이며, BCM 번호는 GPIO Cobbler Plus V2 보드에 적혀있는 번호입니다.
 */
 #include <wiringPi.h>
-#include <stdio.h>
-#include <unistd.h>
+#include <wiringShift.h>
+#define data   4    //#23
+#define clock  5    //#24
+#define latch  6    //#25
 
-void SIPO(unsigned char byte);
-void pulse(int pin);
-
-int SER   = 4;
-int RCLK  = 6;
-int SRCLK = 5;
-unsigned char LED[8]={0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
-
-void init() 
+/*   WPI : <wiringShift.h> 라이브러리 shiftOut 함수에 지연 추가   */
+void shiftOut1 (uint8_t dPin, uint8_t cPin, uint8_t order, uint8_t val)
 {
-  pinMode(SER, OUTPUT);
-  pinMode(RCLK, OUTPUT);
-  pinMode(SRCLK, OUTPUT);
-  digitalWrite(SER, 0);
-  digitalWrite(SRCLK, 0);
-  digitalWrite(RCLK, 0);
-}
+  int8_t i;
 
-void delayMS(int x) 
-{
-  usleep(x * 1000);
-}
+  if (order == MSBFIRST)
+  {
+    for (i = 7 ; i >= 0 ; --i)
+    {
+      digitalWrite (dPin, val & (1 << i)) ;
+      digitalWrite (cPin, HIGH) ;
+      delayMicroseconds(1);        // 라즈베리파이의 IO 제어가 74HC595 최대 클럭 속도보다 빨라 지연 추가
+      digitalWrite (cPin, LOW) ;
+      delayMicroseconds(1);
 
-
-int main (void)
-{
-  if (wiringPiSetup() == -1) {
-    printf("Setup wiringPi failed!");
-    return 1;
+    }
+  }else{
+    for (i = 0 ; i < 8 ; ++i)
+    {
+      digitalWrite (dPin, val & (1 << i)) ;
+      digitalWrite (cPin, HIGH) ;
+      delayMicroseconds(1);
+      digitalWrite (cPin, LOW) ;
+      delayMicroseconds(1);
+    }
   }
+}
 
-  init();
-
+void updateLEDs(int value)
+{
+  digitalWrite(latch,LOW);
+  shiftOut1(data,clock,MSBFIRST,value); // LSBFIRST MSBFIRST
+  digitalWrite(latch,HIGH);
+}
+ 
+int main()
+{
   int i;
+  
+  wiringPiSetup();
+
+  pinMode(data,OUTPUT);
+  pinMode(clock,OUTPUT);
+  pinMode(latch,OUTPUT);
 
   while(1)
-  {  
-
-    for(i = 0; i < 8; i++)
-    {
-      SIPO(LED[i]);
-      pulse(RCLK);
-      delayMS(100);
-      //printf(" i = %d", i);
-    }
-
-    //printf("\n");
-    delayMS(500); // 500 ms
-    
-    for(i = 7; i >= 0; i--)
-    {
-      SIPO(LED[i]);
-      pulse(RCLK);
-      delayMS(100);
-      //printf(" i = %d", i);
-    }
-    delayMS(500); // 500 ms
-
-  }
-
-  usleep(1000);
-  digitalWrite(RCLK, 1);
-}
-
-
-void SIPO(unsigned char byte) 
-{
-  int i;
-  for (i=0;i<8;i++) 
   {
-    digitalWrite(SER,((byte & (0x80 >> i)) > 0));
-    pulse(SRCLK);
+    for (int i = 0; i < 255; i++)  
+    {
+      updateLEDs(i);
+      delay(500);
+    }
   }
-}
 
-
-void pulse(int pin) 
-{
-  digitalWrite(pin, 1);
-  usleep(1);
-  digitalWrite(pin, 0);
-  usleep(1);
+  return 0;
 }

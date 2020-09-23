@@ -1,4 +1,4 @@
-/* 09. RGB LED.c
+/* 11. RGB LED.c
 *
 * RGB LED 모듈에 내장된 LED 3종을 차례대로 ON/OFF해 줍니다.
 *

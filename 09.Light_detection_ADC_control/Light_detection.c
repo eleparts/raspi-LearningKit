@@ -1,4 +1,4 @@
-/* 07. Light detection.c
+/* 09. Light detection.c
 *
 * CDS(LDR)의 빛 감지(저항 변화)값을 ADC 모듈(PCF8591)을 통해 받아 부저를 제어해 줍니다.
 * 스마트폰의 카메라 플래시 등을 CDS에 비춰 주시면 동작합니다.

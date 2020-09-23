@@ -1,4 +1,4 @@
-/* 14. foursegment
+/* 15. Foursegment
 *
 * 7-Segment를 이용하여 숫자를 표시해 줍니다. (4 Digit : 4칸짜리 세그먼트)
 *
