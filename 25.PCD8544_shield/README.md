@@ -5,7 +5,7 @@ PCD8544_shild는 라즈베리파이 쉴드 보드로 브레드 보드와 연결�
 이때, 보드가 GPIO 1번, 2번 핀(3.3V핀/ 5V핀)위치에서 라즈베리파이를 덮는 방향이 되도록 연결해 주어야 합니다.  
 (반대로 연결하지 않도록 주의)  
 
-<img src="./25.PCD8544_shield.jpg" alt="PCD8544_shield" width="80%" height="80%">
+![PCD8544_shield](./25.PCD8544_shield.jpg)
 
 ## 예제코드 다운로드 및 실행방법  
 
