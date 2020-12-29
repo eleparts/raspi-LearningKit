@@ -39,94 +39,94 @@ int keyPadRowPin[4] = {ROW_1, ROW_2, ROW_3, ROW_4};
 int keyPadColPin[4] = {COL_1, COL_2, COL_3, COL_4};
 
 char keyPadsMap[KEY_PAD_ROWS][KEY_PAD_COLS] = {
-  {'1', '2', '3', 'A'},
-  {'4', '5', '6', 'B'},
-  {'7', '8', '9', 'C'},
-  {'*', '0', '#', 'D'}
+    {'1', '2', '3', 'A'},
+    {'4', '5', '6', 'B'},
+    {'7', '8', '9', 'C'},
+    {'*', '0', '#', 'D'}
 };
 
 
 /* 키패드의 입력받은 한 행의 0~4열을 스캔해 입력값이 있는 경우 해당 문자를 반환 */
 char keyPadScan(int row){
-  
-  /* 키패드의 스캔할 행만 HIGH로, 나머지 행은 LOW로 설정해 줍니다 */
-  for(int i=0;i<KEY_PAD_ROWS;i++){
     
-    if( i == row ) {
-      digitalWrite(keyPadRowPin[i], HIGH);
-    }else{
-      digitalWrite(keyPadRowPin[i], LOW);
+    /* 키패드의 스캔할 행만 HIGH로, 나머지 행은 LOW로 설정해 줍니다 */
+    for(int i=0;i<KEY_PAD_ROWS;i++){
+        
+        if( i == row ) {
+            digitalWrite(keyPadRowPin[i], HIGH);
+        }else{
+            digitalWrite(keyPadRowPin[i], LOW);
+        }
     }
-  }
 
-  /* 4열의 값을 차례대로 입력받아 줍니다 */
-  for(int i=0;i<KEY_PAD_COLS;i++){
+    /* 4열의 값을 차례대로 입력받아 줍니다 */
+    for(int i=0;i<KEY_PAD_COLS;i++){
+        
+        if(digitalRead(keyPadColPin[i])){
+
+            return keyPadsMap[row][i];   // 처음 인식되는 키 하나 반환 (다중 키입력 X)
+        }
     
-    if(digitalRead(keyPadColPin[i])){
-
-      return keyPadsMap[row][i];   // 처음 인식되는 키 하나 반환 (다중 키입력 X)
     }
-  
-  }
 
-  return 0;
+    return 0;
 }
 
 /* 키패드를 한 행씩 스캔(함수 호출)합니다 */
 char getKeyPad(){
-  
-  char getKeyPad = 0;
+    
+    char getKeyPad = 0;
 
-  for(int i=0; i<KEY_PAD_ROWS; i++)
-  {
-    getKeyPad = keyPadScan(i);
+    for(int i=0; i<KEY_PAD_ROWS; i++)
+    {
+        getKeyPad = keyPadScan(i);
 
-    if(getKeyPad != 0){
-      return getKeyPad;       // 입력된 값이 있는 경우 문자를 반환하고 종료 (다중 키입력 X)
+        if(getKeyPad != 0){
+            return getKeyPad;       // 입력된 값이 있는 경우 문자를 반환하고 종료 (다중 키입력 X)
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 
 
 
 int main(void){
 
-  char keyValue = 0;
+    char keyValue = 0;
 
-  wiringPiSetup();
+    wiringPiSetup();
 
-  /* ROW(행) OUTPUT 설정 */
-  pinMode(ROW_1,OUTPUT);
-  pinMode(ROW_2,OUTPUT);
-  pinMode(ROW_3,OUTPUT);
-  pinMode(ROW_4,OUTPUT);
+    /* ROW(행) OUTPUT 설정 */
+    pinMode(ROW_1,OUTPUT);
+    pinMode(ROW_2,OUTPUT);
+    pinMode(ROW_3,OUTPUT);
+    pinMode(ROW_4,OUTPUT);
 
-  /* COL(열) INPUT 설정 */
-  pinMode(COL_1,INPUT);
-  pinMode(COL_2,INPUT);
-  pinMode(COL_3,INPUT);
-  pinMode(COL_4,INPUT);
+    /* COL(열) INPUT 설정 */
+    pinMode(COL_1,INPUT);
+    pinMode(COL_2,INPUT);
+    pinMode(COL_3,INPUT);
+    pinMode(COL_4,INPUT);
 
-  /* 풀'다운': 신호가 입력되지 않을 때 'LOW'가 입력 되도록 해 줍니다. <-> 풀업 */
-  pullUpDnControl (COL_1, PUD_DOWN);
-  pullUpDnControl (COL_2, PUD_DOWN);
-  pullUpDnControl (COL_3, PUD_DOWN);
-  pullUpDnControl (COL_4, PUD_DOWN);
+    /* 풀'다운': 신호가 입력되지 않을 때 'LOW'가 입력 되도록 해 줍니다. <-> 풀업 */
+    pullUpDnControl (COL_1, PUD_DOWN);
+    pullUpDnControl (COL_2, PUD_DOWN);
+    pullUpDnControl (COL_3, PUD_DOWN);
+    pullUpDnControl (COL_4, PUD_DOWN);
 
 
-  while(1){
+    while(1){
 
-    keyValue =  getKeyPad();
+        keyValue =  getKeyPad();
 
-    if(keyValue != 0){
-      printf("get key : %c \n", keyValue);
-      delay(400);   // 키가 연속입력되지 않도록 누른 후 지연
+        if(keyValue != 0){
+            printf("get key : %c \n", keyValue);
+            delay(400);   // 키가 연속입력되지 않도록 누른 후 지연
+        }
+        delay(100);
+
     }
-    delay(100);
 
-  }
-
-  return 0;
+    return 0;
 }

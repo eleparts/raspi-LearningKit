@@ -9,10 +9,10 @@
 int main(void)
 {
 
-  wiringPiSetup();
+    wiringPiSetup();
 
-  printf("Hello World!!!\n");
-  delay(1000);
+    printf("Hello World!!!\n");
+    delay(1000);
 
-  return 0;
+    return 0;
 }

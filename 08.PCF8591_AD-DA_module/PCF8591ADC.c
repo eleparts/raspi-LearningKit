@@ -22,32 +22,32 @@
 
 int main (void)
 {
-  int value[4] = {0,};
+    int value[4] = {0,};
 
-  wiringPiSetup();
+    wiringPiSetup();
 
-  pcf8591Setup(Q2W_ABASE, 0x48);
+    pcf8591Setup(Q2W_ABASE, 0x48);
 
-  pinMode(LED, PWM_OUTPUT);
-  pwmWrite(LED, 0);
+    pinMode(LED, PWM_OUTPUT);
+    pwmWrite(LED, 0);
 
-  while(1)
-  {
-    /* ADC 채널별 출력 데이터 (P4,P5,P6의 점퍼는 연결해 두어야 합니다.)
-    *  CH0 : 모듈 내장 CDS(빛 감지)
-    *  CH1 : 모듈 내장 써미스터(온도 감지)
-    *  CH2 : NC / 추가 가변저항 + LED PWM 제어
-    *  CH3 : 모듈 내장 가변저항
-    */
-    for(int i=0; i<4; i++)
+    while(1)
     {
-      value[i] = analogRead(Q2W_ABASE + i);
+        /* ADC 채널별 출력 데이터 (P4,P5,P6의 점퍼는 연결해 두어야 합니다.)
+        *  CH0 : 모듈 내장 CDS(빛 감지)
+        *  CH1 : 모듈 내장 써미스터(온도 감지)
+        *  CH2 : NC / 추가 가변저항 + LED PWM 제어
+        *  CH3 : 모듈 내장 가변저항
+        */
+        for(int i=0; i<4; i++)
+        {
+            value[i] = analogRead(Q2W_ABASE + i);
+        }
+        
+        pwmWrite (LED, value[2] * 4);
+        printf("> CH0 : %d\t| CH1 : %d\t| CH2 : %d\t| CH3 : %d \n",value[0],value[1],value[2],value[3]);
+        delay (100);
     }
-    
-    pwmWrite (LED, value[2] * 4);
-    printf("> CH0 : %d\t| CH1 : %d\t| CH2 : %d\t| CH3 : %d \n",value[0],value[1],value[2],value[3]);
-    delay (100);
-  }
 
-  return 0;
+    return 0;
 }

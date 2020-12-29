@@ -23,37 +23,37 @@
  
 int main (void)
 {
-  int tactsw, tiltsw;
+    int tactsw, tiltsw;
 
-  wiringPiSetup();
+    wiringPiSetup();
 
-  pinMode(LED1, OUTPUT);
-  pinMode(LED2, OUTPUT);
+    pinMode(LED1, OUTPUT);
+    pinMode(LED2, OUTPUT);
 
-  pinMode(TACTSW, INPUT);
-  pinMode(TILTSW, INPUT);
+    pinMode(TACTSW, INPUT);
+    pinMode(TILTSW, INPUT);
 
-  while(1)
-  {
-    tactsw = digitalRead(TACTSW);
-    tiltsw = digitalRead(TILTSW);
-
-    if(tactsw == 0)
+    while(1)
     {
-      digitalWrite(LED1, 1);
-    }else{
-      digitalWrite(LED1, 0);
-    }
-    
-    if(tiltsw != 0)
-    {
-      digitalWrite(LED2, 1);
-    }else{
-      digitalWrite(LED2, 0);
+        tactsw = digitalRead(TACTSW);
+        tiltsw = digitalRead(TILTSW);
+
+        if(tactsw == 0)
+        {
+            digitalWrite(LED1, 1);
+        }else{
+            digitalWrite(LED1, 0);
+        }
+        
+        if(tiltsw != 0)
+        {
+            digitalWrite(LED2, 1);
+        }else{
+            digitalWrite(LED2, 0);
+        }
+
+        delay(100);
     }
 
-    delay(100);
-  }
-
-  return 0;
+    return 0;
 }

@@ -43,44 +43,44 @@
 #define SEG_DP  22
 
 int segmentPinNumber[8] = {        // 세그먼트 GPIO 번호
-  SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP
+    SEG_A, SEG_B, SEG_C, SEG_D, SEG_E, SEG_F, SEG_G, SEG_DP
 };
 
 int segmentValue[11][8] = {
-  {1,1,1,1,1,1,0,0}, // 0
-  {0,1,1,0,0,0,0,0}, // 1
-  {1,1,0,1,1,0,1,0}, // 2
-  {1,1,1,1,0,0,1,0}, // 3
-  {0,1,1,0,0,1,1,0}, // 4
-  {1,0,1,1,0,1,1,0}, // 5
-  {1,0,1,1,1,1,1,0}, // 6
-  {1,1,1,0,0,0,0,0}, // 7
-  {1,1,1,1,1,1,1,0}, // 8
-  {1,1,1,1,0,1,1,0}, // 9
-  {0,0,0,0,0,0,0,1}, // DOT
+    {1,1,1,1,1,1,0,0}, // 0
+    {0,1,1,0,0,0,0,0}, // 1
+    {1,1,0,1,1,0,1,0}, // 2
+    {1,1,1,1,0,0,1,0}, // 3
+    {0,1,1,0,0,1,1,0}, // 4
+    {1,0,1,1,0,1,1,0}, // 5
+    {1,0,1,1,1,1,1,0}, // 6
+    {1,1,1,0,0,0,0,0}, // 7
+    {1,1,1,1,1,1,1,0}, // 8
+    {1,1,1,1,0,1,1,0}, // 9
+    {0,0,0,0,0,0,0,1}, // DOT
 };
 
 int main(void)
 {
-  wiringPiSetup();
+    wiringPiSetup();
 
-  for(int i=0;i<8;i++)
-  {
-    pinMode(segmentPinNumber[i],OUTPUT);
-  }
-
-  while(1)
-  {
-    for(int j=0;j<11;j++)
+    for(int i=0;i<8;i++)
     {
-      for(int i=0;i<8;i++)
-      {
-        digitalWrite(segmentPinNumber[i],segmentValue[j][i]);
-      }
-
-      delay(1000);
+        pinMode(segmentPinNumber[i],OUTPUT);
     }
-  }
 
-  return 0;
+    while(1)
+    {
+        for(int j=0;j<11;j++)
+        {
+            for(int i=0;i<8;i++)
+            {
+                digitalWrite(segmentPinNumber[i],segmentValue[j][i]);
+            }
+
+            delay(1000);
+        }
+    }
+
+    return 0;
 }

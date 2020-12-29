@@ -31,30 +31,30 @@
 
 int main(void)
 {
-  int value, dat, temp;
+    int value, dat, temp;
 
-  wiringPiSetup();
-  pcf8591Setup(Q2W_ABASE, 0x48);
+    wiringPiSetup();
+    pcf8591Setup(Q2W_ABASE, 0x48);
 
-  while(1)
-  {
-    value = analogRead(Q2W_ABASE + ADC_CH);
+    while(1)
+    {
+        value = analogRead(Q2W_ABASE + ADC_CH);
 
-    // printf("data: %d \r\n ",value);
+        // printf("data: %d \r\n ",value);
 
-    /*
-    *  ADC data :
-    *  19.61 : ADC 8bit(256 / 0~5V)
-    *  12.94 : ADC 8bit(256 / 0~3.3V)
-    */
-    dat = (value * 12.94);
-    temp = dat / 10;
+        /*
+        *  ADC data :
+        *  19.61 : ADC 8bit(256 / 0~5V)
+        *  12.94 : ADC 8bit(256 / 0~3.3V)
+        */
+        dat = (value * 12.94);
+        temp = dat / 10;
 
-    printf("dat : %d mV | temp : %d 'C \n", dat, temp);
-    delay(100);
-  }
+        printf("dat : %d mV | temp : %d 'C \n", dat, temp);
+        delay(100);
+    }
 
-  return 0;
+    return 0;
 }
 
 

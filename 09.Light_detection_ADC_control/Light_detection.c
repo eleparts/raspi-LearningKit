@@ -27,30 +27,30 @@
 
 void voice_freq(int del)
 {
-  digitalWrite(BUZZER,HIGH);
-  delay(del);
-  digitalWrite(BUZZER,LOW);
-  delay(del);
+    digitalWrite(BUZZER,HIGH);
+    delay(del);
+    digitalWrite(BUZZER,LOW);
+    delay(del);
 }
 
 int main(void)
 {
 
-  int value;
+    int value;
  
-  wiringPiSetup();
-  pcf8591Setup(Q2W_ABASE,0x48);
-  pinMode(BUZZER,OUTPUT);
-  digitalWrite(BUZZER,LOW);
+    wiringPiSetup();
+    pcf8591Setup(Q2W_ABASE,0x48);
+    pinMode(BUZZER,OUTPUT);
+    digitalWrite(BUZZER,LOW);
 
-  while(1)
-  {
-    value = analogRead(Q2W_ABASE + ADC_CH);
-    //printf("> %d \r\n",value);        // 출력 값 확인용
+    while(1)
+    {
+        value = analogRead(Q2W_ABASE + ADC_CH);
+        //printf("> %d \r\n",value);        // 출력 값 확인용
 
-    if (value<100)
-      voice_freq(value);
-  }
+        if (value<100)
+            voice_freq(value);
+    }
 
-  return 0;
+    return 0;
 }

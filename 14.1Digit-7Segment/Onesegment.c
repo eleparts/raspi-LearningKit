@@ -44,149 +44,149 @@
 
 void display0()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,HIGH);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,LOW);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,HIGH);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,LOW);
 }
 
 void display1()
 {
-  digitalWrite(a,LOW);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,LOW);
-  digitalWrite(e,LOW);
-  digitalWrite(f,LOW);
-  digitalWrite(g,LOW);
+    digitalWrite(a,LOW);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,LOW);
+    digitalWrite(e,LOW);
+    digitalWrite(f,LOW);
+    digitalWrite(g,LOW);
 }
 
 void display2()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,LOW);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,HIGH);
-  digitalWrite(f,LOW);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,LOW);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,HIGH);
+    digitalWrite(f,LOW);
+    digitalWrite(g,HIGH);
 }
 
 void display3()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,LOW);
-  digitalWrite(f,LOW);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,LOW);
+    digitalWrite(f,LOW);
+    digitalWrite(g,HIGH);
 }
 
 void display4()
 {
-  digitalWrite(a,LOW);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,LOW);
-  digitalWrite(e,LOW);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,LOW);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,LOW);
+    digitalWrite(e,LOW);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,HIGH);
 }
 
 void display5()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,LOW);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,LOW);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,LOW);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,LOW);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,HIGH);
 }
-  
+    
 void display6()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,LOW);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,HIGH);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,LOW);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,HIGH);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,HIGH);
 }
 
 void display7()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,LOW);
-  digitalWrite(e,LOW);
-  digitalWrite(f,LOW);
-  digitalWrite(g,LOW);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,LOW);
+    digitalWrite(e,LOW);
+    digitalWrite(f,LOW);
+    digitalWrite(g,LOW);
 }
 
 void display8()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,HIGH);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,HIGH);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,HIGH);
 }
 
 void display9()
 {
-  digitalWrite(a,HIGH);
-  digitalWrite(b,HIGH);
-  digitalWrite(c,HIGH);
-  digitalWrite(d,HIGH);
-  digitalWrite(e,LOW);
-  digitalWrite(f,HIGH);
-  digitalWrite(g,HIGH);
+    digitalWrite(a,HIGH);
+    digitalWrite(b,HIGH);
+    digitalWrite(c,HIGH);
+    digitalWrite(d,HIGH);
+    digitalWrite(e,LOW);
+    digitalWrite(f,HIGH);
+    digitalWrite(g,HIGH);
 }
 
 
 int main(void)
 {
-  wiringPiSetup();
-  pinMode(a,OUTPUT);
-  pinMode(b,OUTPUT);
-  pinMode(c,OUTPUT);
-  pinMode(d,OUTPUT);
-  pinMode(e,OUTPUT);
-  pinMode(f,OUTPUT);
-  pinMode(g,OUTPUT);
+    wiringPiSetup();
+    pinMode(a,OUTPUT);
+    pinMode(b,OUTPUT);
+    pinMode(c,OUTPUT);
+    pinMode(d,OUTPUT);
+    pinMode(e,OUTPUT);
+    pinMode(f,OUTPUT);
+    pinMode(g,OUTPUT);
 
-  while(1)
-  {
-    display0();
-    delay(1000);
-    display1();
-    delay(1000);
-    display2();
-    delay(1000);
-    display3();
-    delay(1000);
-    display4();
-    delay(1000);
-    display5();
-    delay(1000);
-    display6();
-    delay(1000);
-    display7();
-    delay(1000);
-    display8();
-    delay(1000);
-    display9();
-    delay(1000);
-  }
+    while(1)
+    {
+        display0();
+        delay(1000);
+        display1();
+        delay(1000);
+        display2();
+        delay(1000);
+        display3();
+        delay(1000);
+        display4();
+        delay(1000);
+        display5();
+        delay(1000);
+        display6();
+        delay(1000);
+        display7();
+        delay(1000);
+        display8();
+        delay(1000);
+        display9();
+        delay(1000);
+    }
 
-  return 0;	
+    return 0;	
 }

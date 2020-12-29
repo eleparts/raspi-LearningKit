@@ -23,30 +23,30 @@
 
 int main (void)
 {
-  wiringPiSetup();
+    wiringPiSetup();
 
-  pinMode(LED_R, OUTPUT);
-  pinMode(LED_B, OUTPUT);
-  pinMode(LED_G, OUTPUT);
+    pinMode(LED_R, OUTPUT);
+    pinMode(LED_B, OUTPUT);
+    pinMode(LED_G, OUTPUT);
 
-  digitalWrite(LED_R, 1);
-  digitalWrite(LED_B, 1);
-  digitalWrite(LED_G, 1);
-
-  while(1)
-  {
-    digitalWrite(LED_R, 0); // 0 (LOW) : LED ON
-    delay(1000);
     digitalWrite(LED_R, 1);
-  
-    digitalWrite(LED_B, 0);
-    delay(1000);
     digitalWrite(LED_B, 1);
-
-    digitalWrite(LED_G, 0);
-    delay(1000);
     digitalWrite(LED_G, 1);
-  }
 
-  return 0;
+    while(1)
+    {
+        digitalWrite(LED_R, 0); // 0 (LOW) : LED ON
+        delay(1000);
+        digitalWrite(LED_R, 1);
+    
+        digitalWrite(LED_B, 0);
+        delay(1000);
+        digitalWrite(LED_B, 1);
+
+        digitalWrite(LED_G, 0);
+        delay(1000);
+        digitalWrite(LED_G, 1);
+    }
+
+    return 0;
 }

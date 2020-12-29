@@ -29,23 +29,23 @@
 
 int main (void)
 {
-  int adcCh0 = 0, adcCh1 = 0, button = 0;
+    int adcCh0 = 0, adcCh1 = 0, button = 0;
 
-  wiringPiSetup();
+    wiringPiSetup();
 
-  pcf8591Setup(Q2W_ABASE, 0x48);
+    pcf8591Setup(Q2W_ABASE, 0x48);
 
-  pinMode(BUTTON, INPUT);
+    pinMode(BUTTON, INPUT);
 
-  while(1)
-  {
-    adcCh0 = analogRead(Q2W_ABASE + ADC_CH_0);
-    adcCh1 = analogRead(Q2W_ABASE + ADC_CH_1);
-    button = digitalRead(BUTTON);
+    while(1)
+    {
+        adcCh0 = analogRead(Q2W_ABASE + ADC_CH_0);
+        adcCh1 = analogRead(Q2W_ABASE + ADC_CH_1);
+        button = digitalRead(BUTTON);
 
-    printf("> JOY X : %d | Y : %d | BTN : %d \n", adcCh0, adcCh1, button);
-    delay (100);
-  }
+        printf("> JOY X : %d | Y : %d | BTN : %d \n", adcCh0, adcCh1, button);
+        delay (100);
+    }
 
-  return 0;
+    return 0;
 }

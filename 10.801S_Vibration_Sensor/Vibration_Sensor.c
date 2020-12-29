@@ -28,26 +28,26 @@
 int main(void)
 {
 
-  int digtalValue = 0, analogValue = 0;
-  
-  wiringPiSetup();
-
-  pcf8591Setup(Q2W_ABASE,0x48);
-
-  pinMode(D_801S, INPUT);
-
-  printf("-- 801S Vibration Sensor --\n\n");
-  
-  while(1)
-  {
-    digtalValue = digitalRead(D_801S);
-    analogValue = analogRead(Q2W_ABASE + ADC_CH);
+    int digtalValue = 0, analogValue = 0;
     
-    /* 디지털 데이터 및 아날로그 데이터 출력 (디지털 출력은 ! 로 표시) */
-    printf("Digtal : %s \t| Analog : %d  \n", (digtalValue ? "!!!": " . " ), analogValue);
-    //printf("Digtal : %d \t| Analog : %d  \n", digtalValue, analogValue);      // 출력 값 확인(기본)
-    delay(200);
-  }
+    wiringPiSetup();
 
-  return 0;
+    pcf8591Setup(Q2W_ABASE,0x48);
+
+    pinMode(D_801S, INPUT);
+
+    printf("-- 801S Vibration Sensor --\n\n");
+    
+    while(1)
+    {
+        digtalValue = digitalRead(D_801S);
+        analogValue = analogRead(Q2W_ABASE + ADC_CH);
+        
+        /* 디지털 데이터 및 아날로그 데이터 출력 (디지털 출력은 ! 로 표시) */
+        printf("Digtal : %s \t| Analog : %d  \n", (digtalValue ? "!!!": " . " ), analogValue);
+        //printf("Digtal : %d \t| Analog : %d  \n", digtalValue, analogValue);      // 출력 값 확인(기본)
+        delay(200);
+    }
+
+    return 0;
 }

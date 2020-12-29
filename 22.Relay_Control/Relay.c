@@ -24,21 +24,21 @@
 
 int main(void){
 
-  if(wiringPiSetup()==-1){
-    return 1;
-  }
-  
-  pinMode(RELAY,OUTPUT);
-  digitalWrite(RELAY,LOW);
-
-
-  while(1){
-
-    digitalWrite(RELAY,HIGH);
-    delay(1000);
-
+    if(wiringPiSetup()==-1){
+        return 1;
+    }
+    
+    pinMode(RELAY,OUTPUT);
     digitalWrite(RELAY,LOW);
-    delay(1000);
 
-  }
+
+    while(1){
+
+        digitalWrite(RELAY,HIGH);
+        delay(1000);
+
+        digitalWrite(RELAY,LOW);
+        delay(1000);
+
+    }
 }

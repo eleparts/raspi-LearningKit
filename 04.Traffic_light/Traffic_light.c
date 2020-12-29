@@ -22,35 +22,35 @@
 
 int main(void)
 {
-  wiringPiSetup();
+    wiringPiSetup();
 
-  pinMode(buleled,OUTPUT);
-  pinMode(yellowled,OUTPUT);
-  pinMode(redled,OUTPUT);
+    pinMode(buleled,OUTPUT);
+    pinMode(yellowled,OUTPUT);
+    pinMode(redled,OUTPUT);
 
-  digitalWrite(buleled,LOW);
-  digitalWrite(yellowled,LOW);
-  digitalWrite(redled,LOW);
-  
-  while(1)
-  {
-    digitalWrite(buleled,HIGH);
-    delay(5000);
     digitalWrite(buleled,LOW);
-
-    for(int i=0;i<3;i++)
+    digitalWrite(yellowled,LOW);
+    digitalWrite(redled,LOW);
+    
+    while(1)
     {
-      digitalWrite(yellowled,HIGH);
-      delay(500);
-      digitalWrite(yellowled,LOW);
-      delay(500);
+        digitalWrite(buleled,HIGH);
+        delay(5000);
+        digitalWrite(buleled,LOW);
+
+        for(int i=0;i<3;i++)
+        {
+            digitalWrite(yellowled,HIGH);
+            delay(500);
+            digitalWrite(yellowled,LOW);
+            delay(500);
+        }
+
+        digitalWrite(redled,HIGH);
+        delay(5000);
+        digitalWrite(redled,LOW);
+        //delay(500);
     }
 
-    digitalWrite(redled,HIGH);
-    delay(5000);
-    digitalWrite(redled,LOW);
-    //delay(500);
-  }
-
-  return 0;
+    return 0;
 }

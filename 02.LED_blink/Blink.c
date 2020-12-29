@@ -17,20 +17,20 @@
 int main(void)
 { 
 
-  wiringPiSetup();
-  
-  pinMode(LED,OUTPUT);
+    wiringPiSetup();
+    
+    pinMode(LED,OUTPUT);
 
-  while(1)
-  { 
-   
-    digitalWrite(LED,HIGH);
-    delay(1000);
-   
-    digitalWrite(LED,LOW);
-    delay(1000); 
+    while(1)
+    { 
+     
+        digitalWrite(LED,HIGH);
+        delay(1000);
+     
+        digitalWrite(LED,LOW);
+        delay(1000); 
 
-  }
+    }
 
-  return 0;
+    return 0;
 }

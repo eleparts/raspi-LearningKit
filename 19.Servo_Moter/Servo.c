@@ -21,27 +21,27 @@
 
 int main(void)
 {
-  wiringPiSetup();
+    wiringPiSetup();
 
-  softPwmCreate(SERVO_PIN, 0, 200);  // create a period 20 ms
+    softPwmCreate(SERVO_PIN, 0, 200);  // create a period 20 ms
 
-  while(1)
-  {   
-    /* 180도 서보모터의 사용 가능 Duty 범위는 500us(5)~2400us(24) 입니다 */
-    /* 참조 : https://blog.naver.com/elepartsblog/221061007108 */
-    softPwmWrite(SERVO_PIN,15);   // 0 degree
-    delay(500);
+    while(1)
+    {   
+        /* 180도 서보모터의 사용 가능 Duty 범위는 500us(5)~2400us(24) 입니다 */
+        /* 참조 : https://blog.naver.com/elepartsblog/221061007108 */
+        softPwmWrite(SERVO_PIN,15);   // 0 degree
+        delay(500);
 
-    softPwmWrite(SERVO_PIN,5);    // -90 degree
-    delay(500);
+        softPwmWrite(SERVO_PIN,5);    // -90 degree
+        delay(500);
 
-    softPwmWrite(SERVO_PIN,15);   // 0 degree
-    delay(500);
+        softPwmWrite(SERVO_PIN,15);   // 0 degree
+        delay(500);
 
-    softPwmWrite(SERVO_PIN,24);   // 90 degree
-    delay(500);
-      
-  }   
+        softPwmWrite(SERVO_PIN,24);   // 90 degree
+        delay(500);
+            
+    }   
 
-  return 0;
+    return 0;
 }
