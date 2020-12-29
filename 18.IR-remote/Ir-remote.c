@@ -26,7 +26,7 @@
 #define COUNT_DEBUG 0       // COUNT 값 확인용 DEBUG 옵션
 
 #define MAX_DATA	  256     // Total data length : [head 2 + data 64 + end 2] + hode time [t x 4] 
-                                                        // 너무 키를 오래 눌러 이 범위 초과 시 다음 출력에서 헤더 에러 발생
+                              // 너무 키를 오래 눌러 이 범위 초과 시 다음 출력에서 헤더 에러 발생
 
 #define END_DELAY   300000  // 종료 확인용 대기시간 (us)  / COUNT_DEBUG에서 표시되는 최대 값보다 높아야 함 
 
@@ -60,10 +60,10 @@ int read_KEYES_Remote_data(){
             for(int i=0;i<MAX_DATA;i++){
 
                 counter = 0;
-                while ( digitalRead( DATA_PIN ) == laststate ){ // 신호가 반전되는지 검사(H->L / L->H)
+                while ( digitalRead( DATA_PIN ) == laststate ){     // 신호가 반전되는지 검사(H->L / L->H)
 
                     counter++;                   
-                    delayMicroseconds( 1 );             // H/L 신호가 유지되는 동안 1us (1 마이크로 초)마다 counter를 올려줍니다.
+                    delayMicroseconds( 1 );                         // H/L 신호가 유지되는 동안 1us (1 마이크로 초)마다 counter를 올려줍니다.
 
                     if ( counter >= END_DELAY ){
                      break;
@@ -74,7 +74,7 @@ int read_KEYES_Remote_data(){
 
                 data_cnt[i] =  counter;
 
-                if ( counter >= END_DELAY ){     // END_DELAY 시간동안 H/L변환 없는 경우 데이터 수신 종료 (300,000us = 0.3초)
+                if ( counter >= END_DELAY ){                        // END_DELAY 시간동안 H/L변환 없는 경우 데이터 수신 종료 (300,000us = 0.3초)
                     break;
                 }
             }
