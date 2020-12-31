@@ -11,7 +11,7 @@ int main(void)
 
     wiringPiSetup();
 
-    printf("Hello World!!!\n");
+    printf("Hello World!!!\n");     // 터미널에 문자열 출력
     delay(1000);
 
     return 0;

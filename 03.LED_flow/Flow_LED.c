@@ -28,7 +28,7 @@ int main(void)
     pinMode(5,OUTPUT);        // Wpi : 5 | BCM : #24
     pinMode(6,OUTPUT);        // Wpi : 6 | BCM : #25
 
-    while(1)
+    while(1)    // LED 6ea 차례대로 ON/OFF - 반복
     {
         digitalWrite(15,HIGH);
         delay(500);

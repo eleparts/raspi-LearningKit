@@ -24,10 +24,10 @@ int main(void)
     while(1)
     { 
      
-        digitalWrite(LED,HIGH);
+        digitalWrite(LED,HIGH); // LED ON
         delay(1000);
      
-        digitalWrite(LED,LOW);
+        digitalWrite(LED,LOW);  // LED OFF
         delay(1000); 
 
     }
