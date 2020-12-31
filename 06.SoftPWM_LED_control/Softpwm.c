@@ -23,9 +23,9 @@ int main(void)
 
     wiringPiSetup();
 
-    softPwmCreate(6, 0, 100);
+    softPwmCreate(6, 0, 100);           // 소프트웨어 PWM 설정
 
-    while(1)
+    while(1)                            // 무한반복 - PMW 밝기 제어 반복
     {
         for (bright = 0 ; bright < 100 ; ++bright)
         {

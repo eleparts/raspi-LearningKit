@@ -24,7 +24,7 @@
 * QH │     │ ~RESET
 * GND│     │ QH'
 *    └─────┘
-* ※ 74595 IC는 Shift Register 및 Storage(Latch) Register 로 이루어져 있으며, Shift Register 는 데이터를 차례대로 각 핀에 할당, 
+* ※ 74595 IC는 Shift Register 및 Storage(Latch) Register 로 이루어져 있으며, Shift Register 는 데이터를 차례대로 각 핀에 할당,
 * Storage(Latch) Register 는 위 Shift Register에 저장된 값을 받아 저장해 각 출력 핀으로 출력해 주는 역활을 합니다.
 * 따라서, Shift Register에 8번의 클럭을 받아 데이터를 수신, Storage(Latch) Register에 1클럭을 주어 데이터를 출력(적용)해 주는 방식으로 동작됩니다.
 *
@@ -47,45 +47,44 @@ void shiftOut1 (uint8_t dPin, uint8_t cPin, uint8_t order, uint8_t val)
     {
         for (i = 7 ; i >= 0 ; --i)
         {
-            digitalWrite (dPin, val & (1 << i)) ;
-            digitalWrite (cPin, HIGH) ;
+            digitalWrite (dPin, val & (1 << i));
+            digitalWrite (cPin, HIGH);
             delayMicroseconds(1);        // 라즈베리파이의 IO 제어가 74HC595 최대 클럭 속도보다 빨라 지연 추가
-            digitalWrite (cPin, LOW) ;
+            digitalWrite (cPin, LOW);
             delayMicroseconds(1);
-
         }
     }else{
         for (i = 0 ; i < 8 ; ++i)
         {
-            digitalWrite (dPin, val & (1 << i)) ;
-            digitalWrite (cPin, HIGH) ;
+            digitalWrite (dPin, val & (1 << i));
+            digitalWrite (cPin, HIGH);
             delayMicroseconds(1);
-            digitalWrite (cPin, LOW) ;
+            digitalWrite (cPin, LOW);
             delayMicroseconds(1);
         }
     }
 }
 
-void updateLEDs(int value)
+void updateLEDs(int value)  // LED 제어 함수
 {
     digitalWrite(latch,LOW);
     shiftOut1(data,clock,MSBFIRST,value); // LSBFIRST MSBFIRST
     digitalWrite(latch,HIGH);
 }
- 
+
 int main()
 {
     int i;
-    
+
     wiringPiSetup();
 
-    pinMode(data,OUTPUT);
+    pinMode(data,OUTPUT);   // 74HC595용 핀 설정
     pinMode(clock,OUTPUT);
     pinMode(latch,OUTPUT);
 
-    while(1)
+    while(1)                // 무한반복 - LED 제어
     {
-        for (int i = 0; i < 255; i++)  
+        for (int i = 0; i < 255; i++)
         {
             updateLEDs(i);
             delay(500);

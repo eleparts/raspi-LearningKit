@@ -27,17 +27,21 @@ int main (void)
 
     wiringPiSetup();
 
+    // LED 핀 출력 설정
     pinMode(LED1, OUTPUT);
     pinMode(LED2, OUTPUT);
 
+    // 텍트, 틸트 스위치 입력 설정
     pinMode(TACTSW, INPUT);
     pinMode(TILTSW, INPUT);
 
     while(1)
-    {
+    {   
+        // 스위치 값(상태) 받아오기
         tactsw = digitalRead(TACTSW);
         tiltsw = digitalRead(TILTSW);
 
+        // 스위치 입력 값에 따라 각 LED 제어
         if(tactsw == 0)
         {
             digitalWrite(LED1, 1);

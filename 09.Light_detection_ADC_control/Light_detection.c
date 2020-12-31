@@ -45,7 +45,9 @@ int main(void)
 
     while(1)
     {
+        // 아날로그 값 입력받음
         value = analogRead(Q2W_ABASE + ADC_CH);
+
         //printf("> %d \r\n",value);        // 출력 값 확인용
 
         if (value<100)

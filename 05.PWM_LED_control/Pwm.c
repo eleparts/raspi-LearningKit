@@ -48,9 +48,9 @@ int main (void)
     if (wiringPiSetup() == -1)
         exit(1);
 
-    pinMode (1,  PWM_OUTPUT);
+    pinMode (1,  PWM_OUTPUT);               // LED 핀 PWM 설정
 
-    while (1)
+    while (1)                               // 무한 반복 - PWM 밝기 제어
     {
         for (bright = 0 ; bright < 1024 ; ++bright)
         {

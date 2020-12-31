@@ -28,11 +28,12 @@ int main(void){
         return 1;
     }
     
+    // 릴레이 GPIO 설정
     pinMode(RELAY,OUTPUT);
     digitalWrite(RELAY,LOW);
 
 
-    while(1){
+    while(1){                   // 무한반복 - 릴레이 On-Off
 
         digitalWrite(RELAY,HIGH);
         delay(1000);

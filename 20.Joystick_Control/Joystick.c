@@ -39,10 +39,11 @@ int main (void)
 
     while(1)
     {
-        adcCh0 = analogRead(Q2W_ABASE + ADC_CH_0);
-        adcCh1 = analogRead(Q2W_ABASE + ADC_CH_1);
-        button = digitalRead(BUTTON);
+        adcCh0 = analogRead(Q2W_ABASE + ADC_CH_0);  // ADC 0번 채널 읽기
+        adcCh1 = analogRead(Q2W_ABASE + ADC_CH_1);  // ADC 1번 채널 읽기
+        button = digitalRead(BUTTON);               // 디지털 핀 읽기
 
+        // 입력 값 화면에 출력
         printf("> JOY X : %d | Y : %d | BTN : %d \n", adcCh0, adcCh1, button);
         delay (100);
     }

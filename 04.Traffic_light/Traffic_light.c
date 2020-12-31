@@ -24,6 +24,7 @@ int main(void)
 {
     wiringPiSetup();
 
+    // LED 설정 및 OFF 대기
     pinMode(buleled,OUTPUT);
     pinMode(yellowled,OUTPUT);
     pinMode(redled,OUTPUT);
@@ -32,13 +33,13 @@ int main(void)
     digitalWrite(yellowled,LOW);
     digitalWrite(redled,LOW);
     
-    while(1)
+    while(1)                                // 무한반복
     {
-        digitalWrite(buleled,HIGH);
+        digitalWrite(buleled,HIGH);         // 파랑 LED 5초 켜짐 
         delay(5000);
         digitalWrite(buleled,LOW);
 
-        for(int i=0;i<3;i++)
+        for(int i=0;i<3;i++)                // 노랑 LED 3번 깜빡임
         {
             digitalWrite(yellowled,HIGH);
             delay(500);
@@ -46,7 +47,7 @@ int main(void)
             delay(500);
         }
 
-        digitalWrite(redled,HIGH);
+        digitalWrite(redled,HIGH);          // 빨간 LED 5초 켜짐
         delay(5000);
         digitalWrite(redled,LOW);
         //delay(500);

@@ -39,7 +39,8 @@ int main (void)
         *  CH2 : NC / 추가 가변저항 + LED PWM 제어
         *  CH3 : 모듈 내장 가변저항
         */
-        for(int i=0; i<4; i++)
+
+        for(int i=0; i<4; i++)  // 4개 채널 값 입력받음
         {
             value[i] = analogRead(Q2W_ABASE + i);
         }

@@ -66,7 +66,7 @@ int main(void)
         /* 정회전 */
         for(int loop=0; loop < 535; loop++) // 대략 360' 회전 (1 -> 4 step 535회 반복) 
         {
-            for(int i=0; i<8;i++){    // step 1 -> step 4 순서 반복
+            for(int i=0; i<8;i++){      // step 1 -> step 4 순서 반복
 
                 stepMoterWrite(i);
                 delay(1);
